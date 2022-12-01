@@ -2,11 +2,11 @@
 
 namespace Tests\Feature;
 
-use App\Models\Article;
+use App\Article;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
-use App\Models\Category;
+use App\Category;
 use App\User;
 use SebastianBergmann\Type\VoidType;
 
@@ -37,12 +37,13 @@ class TestingApiTest extends TestCase
     {
 
         $formData = [
-            'title' => 'Golang',
-            'content' => 'Golang adalah bahasa pemrograman prosedural yang dibuat di Google menggunakan bahasa pemrograman C oleh Robert Griesemer, Rob Pike dan Ken Thompson pada tahun 2007 dan dirilis sebagai bahasa pemrograman open source pada tahun 2009. Golang mulai populer sejak digunakan untuk membuat Docker pada tahun 2011.',
+            'title' => 'Python',
+            'content' => 'Python adalah bahasa pemrograman prosedural yang dibuat di Google menggunakan bahasa pemrograman C oleh Robert Griesemer, Rob Pike dan Ken Thompson pada tahun 2007 dan dirilis sebagai bahasa pemrograman open source pada tahun 2009. Golang mulai populer sejak digunakan untuk membuat Docker pada tahun 2011.',
             'image' => 'golang.jpg',
-            'users_id' => 7,
-            'categories_id' => 4
+            'users_id' => 8,
+            'categories_id' => 6
         ];
+
 
         $this->json('POST', route('article.store'), $formData)
             ->assertStatus(200)
